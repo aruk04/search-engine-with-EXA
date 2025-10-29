@@ -87,10 +87,4 @@ The script will show helpful error messages if:
 - There are connection issues
 - The search query fails
 
-## Contributing
 
-Feel free to fork this repository and submit pull requests for any improvements.
-
-## License
-
-This project is available under the MIT License.
