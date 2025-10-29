@@ -2,6 +2,47 @@
 
 A simple search engine interface using the Exa API to perform intelligent searches.
 
+- Building a custom search with an API that has LLM capabilities
+- Accessing LLM’s is difficult due to large training time and high cost
+- APIs are used to tackle this issue - it serves as a tool to perform NLP tasks - includes text generation, summarization, or even translation.
+
+# What is EXA?
+
+Exa (previously known as Metaphor) - API capable of retrieving the best information on the web - semantic searches are possible to retrieve high quality information.
+
+Google - relies on keyword searches 
+Exa understands the user’s input and the available content on the internet.
+
+Exa uses LLMs as a core component - it has been trained extensively to understand human language.
+
+Example implementation:
+
+from exa_py import Exa
+
+exa = Exa('YOUR_KEY_HERE')
+
+query = input('Search here: ')
+
+response = exa.search(
+  query,
+  num_results=5,
+  type='keyword',
+  include_domains=['https://www.tiktok.com'],
+)
+
+for result in response.results:
+  print(f'Title: {result.title}')
+  print(f'URL: {result.url}')
+  print()
+
+
+Exa provides numerous filters for a search query. A couple of examples are listed below:
+- highlights - Text snippets the LLM identifies as most relevant from each page
+- numResults - the number of results you want to be returned
+- include_domains - a list of domains that you want to be included in the search results
+- start_published_date / end_published_date - Dates to restrict the results to content published in a certain time-range
+
+
 ## Prerequisites
 
 - Python 3.x
